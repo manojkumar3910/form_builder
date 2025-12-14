@@ -1,0 +1,320 @@
+/* FormBuilder Styles */
+
+.form-builder-container {
+  width: 100%;
+  height: 100%;
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+}
+
+.builder-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  height: 100%;
+  overflow: hidden;
+}
+
+.builder-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.builder-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.builder-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.builder-panel::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+.builder-panel::-webkit-scrollbar-thumb:hover {
+  background: var(--text-light);
+}
+
+.form-meta-section,
+.add-field-section,
+.fields-list-section {
+  background: var(--bg-color);
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.form-meta-section:hover,
+.add-field-section:hover,
+.fields-list-section:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-meta-section h3,
+.add-field-section h3,
+.fields-list-section h3,
+.field-editor h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.meta-field {
+  margin-bottom: 1rem;
+}
+
+.meta-field:last-child {
+  margin-bottom: 0;
+}
+
+.meta-field label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.meta-field input,
+.meta-field textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: var(--text-primary);
+  background: var(--card-bg);
+  transition: var(--transition);
+}
+
+.meta-field input:focus,
+.meta-field textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.field-type-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.add-field-btn {
+  padding: 0.625rem 0.75rem;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--text-secondary);
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  transition: var(--transition);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+}
+
+.add-field-btn:hover {
+  background: var(--primary-light);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.fields-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.no-fields {
+  text-align: center;
+  color: var(--text-light);
+  font-size: 0.875rem;
+  padding: 2rem 1rem;
+  background: rgba(99, 102, 241, 0.03);
+  border-radius: var(--radius);
+  border: 2px dashed var(--border-color);
+}
+
+.field-item {
+  padding: 0.875rem 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.field-item:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-md);
+  transform: translateX(4px);
+}
+
+.field-item.selected {
+  background: var(--primary-light);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.field-item-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.field-type-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  background: var(--primary-gradient);
+  color: white;
+  border-radius: 20px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.field-name {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.field-item-actions {
+  display: flex;
+  gap: 0.375rem;
+}
+
+.action-btn {
+  padding: 0.375rem 0.5rem;
+  border: none;
+  background: var(--bg-color);
+  color: var(--text-secondary);
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: all 0.2s ease;
+  font-weight: 600;
+}
+
+.action-btn:hover:not(:disabled) {
+  background: var(--primary-light);
+  color: var(--primary-color);
+}
+
+.action-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.action-btn.delete {
+  color: var(--danger-color);
+}
+
+.action-btn.delete:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--danger-color);
+}
+
+.editor-panel {
+  background: var(--bg-color);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  overflow-y: auto;
+}
+
+.editor-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.editor-panel::-webkit-scrollbar-track {
+  background: var(--bg-color);
+  border-radius: 3px;
+}
+
+.editor-panel::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+.no-selection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  color: var(--text-light);
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .builder-content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .editor-panel {
+    min-height: 400px;
+  }
+
+  .field-type-buttons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .builder-content {
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .form-meta-section,
+  .add-field-section,
+  .fields-list-section,
+  .editor-panel {
+    padding: 1rem;
+  }
+
+  .field-type-buttons {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .field-item-header {
+    flex-wrap: wrap;
+  }
+}
